@@ -198,8 +198,13 @@
   }
 }
 
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .sb-section {
-  position: relative;
+  position: absolute;
   display: inline-block;
   overflow: hidden;
   width: 100%;
@@ -207,6 +212,7 @@
 }
 
 .sb-section--1 {
+  top: 0;
   background-image: url("../images/wallpaper.jpg");
   background-size: cover;
 }
@@ -333,8 +339,18 @@
   animation: yellow-row-8 0.8s forwards 4.4s;
 }
 
+.sb-section--2 {
+  background: #212121;
+  top: 100vh;
+  transition: 0.8s top;
+}
+
+.sb-section--2.x-active {
+  top: 0;
+}
+
 .sb-footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   height: 60px;
@@ -342,6 +358,8 @@
   background: #ffeb3b;
   box-sizing: border-box;
   overflow: hidden;
+  transition: 0.8s bottom;
+  z-index: 1;
   animation: yellow-footer 0.8s forwards 4.8s;
 }
 
@@ -385,4 +403,8 @@
   top: 15px;
   right: -30px;
   animation: linkedin-footer 0.4s forwards 5.76s;
+}
+
+.sb-footer.x-fixed {
+  bottom: calc(100% - 60px);
 }

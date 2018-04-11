@@ -4,14 +4,20 @@ $yellow: #ffeb3b;
 $grey: #212121;
 $time1: 0.8;
 
+body {
+	overflow: hidden;
+	height: 100vh;
+}
+
 .sb-section {
-  position: relative;
+  position: absolute;
   display: inline-block;
   overflow: hidden;
   width: 100%;
   height: 100vh;
 
   &--1 {
+		top: 0;
     background-image: url('../images/wallpaper.jpg');
     background-size: cover;
 
@@ -149,63 +155,79 @@ $time1: 0.8;
 			}
 	  }
 	}
+
+	&--2 {
+		background: $grey;
+		top: 100vh;
+		transition: #{$time1}s top;
+
+		&.x-active {
+			top: 0;
+		}
+	}
 }
 
 .sb-footer {
-	position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 60px;
-    width: 0;
-    background: $yellow;
-		box-sizing: border-box;
-		overflow: hidden;
+	position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 60px;
+  width: 0;
+  background: $yellow;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: #{$time1}s bottom;
+	z-index: 1;
 
-		animation: yellow-footer #{$time1}s forwards #{6*$time1}s;
+	animation: yellow-footer #{$time1}s forwards #{6*$time1}s;
 
-		&__image {
-			height: 50px;
-			width: 50px;
-			box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .4);
-			border-radius: 100%;
-			left: -50px;
-			position: absolute;
-			top: 5px;
+	&__image {
+		height: 50px;
+		width: 50px;
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .4);
+		border-radius: 100%;
+		left: -50px;
+		position: absolute;
+		top: 5px;
 
-			animation: image-footer #{$time1}s forwards #{7*$time1}s;
+		animation: image-footer #{$time1}s forwards #{7*$time1}s;
+	}
+
+	&__info {
+		position: absolute;
+		top: 10px;
+		left: 60px;
+
+		p {
+			color: $grey;
+			font-size: 14px;
+			font-family: 'Roboto', sans-serif;
+			line-height: 20px;
+			opacity: 0;
+
+			animation: info-footer #{$time1}s forwards #{7*$time1}s;
 		}
+	}
 
-		&__info {
-			position: absolute;
-			top: 10px;
-			left: 60px;
+	&__codepen {
+		width: 30px;
+		position: absolute;
+		top: 15px;
+		right: -30px;
 
-			p {
-				color: $grey;
-				font-size: 14px;
-				font-family: 'Roboto', sans-serif;
-				line-height: 20px;
-				opacity: 0;
+		animation: codepen-footer #{$time1/2}s forwards #{7*$time1}s;
+	}
 
-				animation: info-footer #{$time1}s forwards #{7*$time1}s;
-			}
-		}
+	&__linkedin {
+		width: 30px;
+		position: absolute;
+		top: 15px;
+		right: -30px;
 
-		&__codepen {
-			width: 30px;
-			position: absolute;
-			top: 15px;
-			right: -30px;
+		animation: linkedin-footer #{$time1/2}s forwards #{7.2*$time1}s;
+	}
 
-			animation: codepen-footer #{$time1/2}s forwards #{7*$time1}s;
-		}
-
-		&__linkedin {
-			width: 30px;
-			position: absolute;
-			top: 15px;
-			right: -30px;
-
-			animation: linkedin-footer #{$time1/2}s forwards #{7.2*$time1}s;
-		}
+	&.x-fixed {
+    bottom: calc(100% - 60px);
+	}
 }
