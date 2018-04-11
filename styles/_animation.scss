@@ -1,4 +1,4 @@
-
+$grey: #212121;
 
 @keyframes yellow-row-1 {
   0% {
@@ -169,7 +169,7 @@
   }
 
   100% {
-    background-color: rgba(0,0,0, 0.7);
+    background-color: rgba($grey, 0.7);
   }
 }
 
@@ -185,12 +185,12 @@
 
 @keyframes image-footer {
   0% {
-    left: -130px;
+    left: -50px;
 		transform: rotate(0deg);
   }
 
   100% {
-    left: 10px;
+    left: 5px;
 		transform: rotate(360deg);
   }
 }
@@ -202,5 +202,25 @@
 
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes codepen-footer {
+	0% {
+		right: -30px;
+	}
+
+	100% {
+		right: 10px;
+	}
+}
+
+@keyframes linkedin-footer {
+	0% {
+		right: -30px;
+	}
+
+	100% {
+		right: 50px;
 	}
 }

@@ -1,6 +1,8 @@
 @import "animation";
 
 $yellow: #ffeb3b;
+$grey: #212121;
+$time1: 0.8;
 
 .sb-section {
   position: relative;
@@ -22,7 +24,7 @@ $yellow: #ffeb3b;
       left: 50%;
       margin-left: -197px;
       overflow: hidden;
-      animation: intro-hello 1.6s forwards 1.4s;
+      animation: intro-hello #{$time1}s forwards #{$time1}s;
 
       p {
         color: $yellow;
@@ -40,7 +42,7 @@ $yellow: #ffeb3b;
       margin-left: -184px;
       overflow: hidden;
       width: 0;
-      animation: intro-web 1.6s forwards 4.55s;
+      animation: intro-web #{$time1}s forwards #{4*$time1}s;
 
       p {
         color: $yellow;
@@ -58,7 +60,7 @@ $yellow: #ffeb3b;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0, 0.7);
+      background-color: rgba(#212121, 0.7);
 
       animation: background-intro 2s forwards;
     }
@@ -71,7 +73,7 @@ $yellow: #ffeb3b;
 	      height: 5px;
 	      background: $yellow;
 
-	      animation: yellow-row-1 1.5s forwards;
+	      animation: yellow-row-1 #{$time1}s forwards;
 	    }
 
 			&--2 {
@@ -81,7 +83,7 @@ $yellow: #ffeb3b;
 	      width: 5px;
 	      background: $yellow;
 
-	      animation: yellow-row-2 1.5s forwards .75s;
+	      animation: yellow-row-2 #{$time1}s forwards #{$time1/2}s;
 	    }
 
 			&--3 {
@@ -91,7 +93,7 @@ $yellow: #ffeb3b;
 	      width: 5px;
 	      background: $yellow;
 
-	      animation: yellow-row-3 .5s forwards 2.7s;
+	      animation: yellow-row-3 #{$time1}s forwards #{2*$time1}s;
 	    }
 
 			&--4 {
@@ -101,7 +103,7 @@ $yellow: #ffeb3b;
 	      height: 5px;
 	      background: $yellow;
 
-	      animation: yellow-row-4 1.2s forwards 2.95s;
+	      animation: yellow-row-4 #{$time1}s forwards #{2.5*$time1}s;
 	    }
 
 			&--5 {
@@ -111,7 +113,7 @@ $yellow: #ffeb3b;
 	      width: 5px;
 	      background: $yellow;
 
-	      animation: yellow-row-5 1.2s forwards 3.55s;
+	      animation: yellow-row-5 #{$time1}s forwards #{3*$time1}s;
 	    }
 
 			&--6 {
@@ -121,7 +123,7 @@ $yellow: #ffeb3b;
 	      height: 5px;
 	      background: $yellow;
 
-	      animation: yellow-row-6 1.2s forwards 4.15s;
+	      animation: yellow-row-6 #{$time1}s forwards #{3.5*$time1}s;
 	    }
 
 			&--7 {
@@ -132,7 +134,7 @@ $yellow: #ffeb3b;
 		    width: 0;
 		    background: $yellow;
 
-	      animation: yellow-row-7 1.2s forwards 6.15s;
+	      animation: yellow-row-7 #{$time1}s forwards #{5*$time1}s;
 			}
 
 			&--8 {
@@ -143,7 +145,7 @@ $yellow: #ffeb3b;
 		    width: 5px;
 		    background: $yellow;
 
-	      animation: yellow-row-8 1.2s forwards 6.75s;
+	      animation: yellow-row-8 #{$time1}s forwards #{5.5*$time1}s;
 			}
 	  }
 	}
@@ -153,39 +155,57 @@ $yellow: #ffeb3b;
 	position: absolute;
     bottom: 0;
     right: 0;
-    height: 100px;
+    height: 60px;
     width: 0;
     background: $yellow;
 		box-sizing: border-box;
 		overflow: hidden;
 
-		animation: yellow-footer 1s forwards 7.35s;
+		animation: yellow-footer #{$time1}s forwards #{6*$time1}s;
 
 		&__image {
-			height: 80px;
+			height: 50px;
+			width: 50px;
 			box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .4);
 			border-radius: 100%;
-			left: -130px;
-			transition: 1s all;
+			left: -50px;
 			position: absolute;
-			top: 10px;
+			top: 5px;
 
-			animation: image-footer 1s forwards 8.35s;
+			animation: image-footer #{$time1}s forwards #{7*$time1}s;
 		}
 
 		&__info {
 			position: absolute;
-			top: 20px;
-			left: 100px;
+			top: 10px;
+			left: 60px;
 
 			p {
-				color: #525d66;
-				font-size: 16px;
+				color: $grey;
+				font-size: 14px;
 				font-family: 'Roboto', sans-serif;
-				line-height: 30px;
+				line-height: 20px;
 				opacity: 0;
 
-				animation: info-footer 2s forwards 8.35s;
+				animation: info-footer #{$time1}s forwards #{7*$time1}s;
 			}
+		}
+
+		&__codepen {
+			width: 30px;
+			position: absolute;
+			top: 15px;
+			right: -30px;
+
+			animation: codepen-footer #{$time1/2}s forwards #{7*$time1}s;
+		}
+
+		&__linkedin {
+			width: 30px;
+			position: absolute;
+			top: 15px;
+			right: -30px;
+
+			animation: linkedin-footer #{$time1/2}s forwards #{7.2*$time1}s;
 		}
 }

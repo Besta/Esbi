@@ -147,7 +147,7 @@
     background-color: transparent;
   }
   100% {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(33, 33, 33, 0.7);
   }
 }
 
@@ -162,11 +162,11 @@
 
 @keyframes image-footer {
   0% {
-    left: -130px;
+    left: -50px;
     transform: rotate(0deg);
   }
   100% {
-    left: 10px;
+    left: 5px;
     transform: rotate(360deg);
   }
 }
@@ -177,6 +177,24 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes codepen-footer {
+  0% {
+    right: -30px;
+  }
+  100% {
+    right: 10px;
+  }
+}
+
+@keyframes linkedin-footer {
+  0% {
+    right: -30px;
+  }
+  100% {
+    right: 50px;
   }
 }
 
@@ -202,7 +220,7 @@
   left: 50%;
   margin-left: -197px;
   overflow: hidden;
-  animation: intro-hello 1.6s forwards 1.4s;
+  animation: intro-hello 0.8s forwards 0.8s;
 }
 
 .sb-section--1 .sb-intro p {
@@ -220,7 +238,7 @@
   margin-left: -184px;
   overflow: hidden;
   width: 0;
-  animation: intro-web 1.6s forwards 4.55s;
+  animation: intro-web 0.8s forwards 3.2s;
 }
 
 .sb-section--1 .sb-job p {
@@ -237,7 +255,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(33, 33, 33, 0.7);
   animation: background-intro 2s forwards;
 }
 
@@ -247,7 +265,7 @@
   left: 0;
   height: 5px;
   background: #ffeb3b;
-  animation: yellow-row-1 1.5s forwards;
+  animation: yellow-row-1 0.8s forwards;
 }
 
 .sb-section--1 .sb-yellow-row--2 {
@@ -256,7 +274,7 @@
   right: calc(50% + 189px);
   width: 5px;
   background: #ffeb3b;
-  animation: yellow-row-2 1.5s forwards .75s;
+  animation: yellow-row-2 0.8s forwards 0.4s;
 }
 
 .sb-section--1 .sb-yellow-row--3 {
@@ -265,7 +283,7 @@
   right: calc(50% - 195px);
   width: 5px;
   background: #ffeb3b;
-  animation: yellow-row-3 .5s forwards 2.7s;
+  animation: yellow-row-3 0.8s forwards 1.6s;
 }
 
 .sb-section--1 .sb-yellow-row--4 {
@@ -274,7 +292,7 @@
   right: calc(50% - 194px);
   height: 5px;
   background: #ffeb3b;
-  animation: yellow-row-4 1.2s forwards 2.95s;
+  animation: yellow-row-4 0.8s forwards 2s;
 }
 
 .sb-section--1 .sb-yellow-row--5 {
@@ -283,7 +301,7 @@
   right: calc(50% + 223px);
   width: 5px;
   background: #ffeb3b;
-  animation: yellow-row-5 1.2s forwards 3.55s;
+  animation: yellow-row-5 0.8s forwards 2.4s;
 }
 
 .sb-section--1 .sb-yellow-row--6 {
@@ -292,7 +310,7 @@
   right: calc(50% + 180px);
   height: 5px;
   background: #ffeb3b;
-  animation: yellow-row-6 1.2s forwards 4.15s;
+  animation: yellow-row-6 0.8s forwards 2.8s;
 }
 
 .sb-section--1 .sb-yellow-row--7 {
@@ -302,7 +320,7 @@
   height: 5px;
   width: 0;
   background: #ffeb3b;
-  animation: yellow-row-7 1.2s forwards 6.15s;
+  animation: yellow-row-7 0.8s forwards 4s;
 }
 
 .sb-section--1 .sb-yellow-row--8 {
@@ -312,43 +330,59 @@
   height: 0;
   width: 5px;
   background: #ffeb3b;
-  animation: yellow-row-8 1.2s forwards 6.75s;
+  animation: yellow-row-8 0.8s forwards 4.4s;
 }
 
 .sb-footer {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 100px;
+  height: 60px;
   width: 0;
   background: #ffeb3b;
   box-sizing: border-box;
   overflow: hidden;
-  animation: yellow-footer 1s forwards 7.35s;
+  animation: yellow-footer 0.8s forwards 4.8s;
 }
 
 .sb-footer__image {
-  height: 80px;
+  height: 50px;
+  width: 50px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
   border-radius: 100%;
-  left: -130px;
-  transition: 1s all;
+  left: -50px;
   position: absolute;
-  top: 10px;
-  animation: image-footer 1s forwards 8.35s;
+  top: 5px;
+  animation: image-footer 0.8s forwards 5.6s;
 }
 
 .sb-footer__info {
   position: absolute;
-  top: 20px;
-  left: 100px;
+  top: 10px;
+  left: 60px;
 }
 
 .sb-footer__info p {
-  color: #525d66;
-  font-size: 16px;
+  color: #212121;
+  font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  line-height: 30px;
+  line-height: 20px;
   opacity: 0;
-  animation: info-footer 2s forwards 8.35s;
+  animation: info-footer 0.8s forwards 5.6s;
+}
+
+.sb-footer__codepen {
+  width: 30px;
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  animation: codepen-footer 0.4s forwards 5.6s;
+}
+
+.sb-footer__linkedin {
+  width: 30px;
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  animation: linkedin-footer 0.4s forwards 5.76s;
 }
