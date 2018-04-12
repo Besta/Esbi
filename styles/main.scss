@@ -1,240 +1,302 @@
 @import "animation";
+@import "components/sb-card";
+@import "components/sb-tag";
+@import "components/sb-rating";
 
-$yellow: #ffeb3b;
-$grey: #212121;
+@import "color";
+
 $time1: 0.8;
 
 body {
-  overflow: hidden;
-  height: 100vh;
-  font-family: 'Roboto', sans-serif;
+	overflow: hidden;
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
 }
 
 .sb-section {
-  position: absolute;
-  display: inline-block;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
+	position: absolute;
+	display: inline-block;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
 
-  &--1 {
-	top: 0;
-	background-image: url('../images/wallpaper.jpg');
-	background-size: cover;
-
-	.sb-intro {
-	  position: absolute;
-	  width: 9px;
-	  height: 0;
-	  top: 50%;
-	  margin-top: -25px;
-	  left: 50%;
-	  margin-left: -197px;
-	  overflow: hidden;
-	  animation: intro-hello #{$time1}s forwards #{$time1}s;
-
-	  p {
-		color: $yellow;
-		font-size: 50px;
-		white-space: nowrap;
-	  }
+	&__content {
+		max-width: 1004px;
+		margin: auto;
+		position: relative;
 	}
 
-	.sb-job {
-	  position: absolute;
-	  top: 50%;
-	  margin-top: 63px;
-	  left: 50%;
-	  margin-left: -184px;
-	  overflow: hidden;
-	  width: 0;
-	  animation: intro-web #{$time1}s forwards #{4*$time1}s;
-
-	  p {
-		color: $yellow;
-		font-size: 50px;
-		font-family: 'Roboto', sans-serif;
-		white-space: nowrap;
-	  }
-	}
-
-	&:before {
-	  content: '';
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  background-color: rgba(#212121, 0.7);
-
-	  animation: background-intro 2s forwards;
-	}
-
-	.sb-yellow-row {
-	  &--1 {
-		position: absolute;
+	&--1 {
 		top: 0;
-		left: 0;
-		height: 5px;
-		background: $yellow;
+		background-image: url('../images/wallpaper.jpg');
+		background-size: cover;
 
-		animation: yellow-row-1 #{$time1}s forwards;
-	  }
+		.sb-intro {
+			position: absolute;
+			width: 9px;
+			height: 0;
+			top: 50%;
+			margin-top: -25px;
+			left: 50%;
+			margin-left: -197px;
+			overflow: hidden;
+			animation: intro-hello #{$time1}s forwards #{$time1}s;
 
-	  &--2 {
-		position: absolute;
-		top: 0;
-		right: calc(50% + 189px);
-		width: 5px;
-		background: $yellow;
+			p {
+				color: $yellow;
+				font-size: 50px;
+				white-space: nowrap;
+			}
+		}
 
-		animation: yellow-row-2 #{$time1}s forwards #{$time1/2}s;
-	  }
+		.sb-job {
+			position: absolute;
+			top: 50%;
+			margin-top: 63px;
+			left: 50%;
+			margin-left: -184px;
+			overflow: hidden;
+			width: 0;
+			animation: intro-web #{$time1}s forwards #{4*$time1}s;
 
-	  &--3 {
-		position: absolute;
-		top: calc(50% + 16px);
-		right: calc(50% - 195px);
-		width: 5px;
-		background: $yellow;
+			p {
+				color: $yellow;
+				font-size: 50px;
+				font-family: 'Roboto', sans-serif;
+				white-space: nowrap;
+			}
+		}
 
-		animation: yellow-row-3 #{$time1}s forwards #{2*$time1}s;
-	  }
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#212121, 0.7);
 
-	  &--4 {
-		position: absolute;
-		top: calc(50% + 41px);
-		right: calc(50% - 194px);
-		height: 5px;
-		background: $yellow;
+			animation: background-intro 2s forwards;
+		}
 
-		animation: yellow-row-4 #{$time1}s forwards #{2.5*$time1}s;
-	  }
+		.sb-yellow-row {
+			&--1 {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 5px;
+				background: $yellow;
 
-	  &--5 {
-		position: absolute;
-		top: calc(50% + 41px);
-		right: calc(50% + 223px);
-		width: 5px;
-		background: $yellow;
+				animation: yellow-row-1 #{$time1}s forwards;
+			}
 
-		animation: yellow-row-5 #{$time1}s forwards #{3*$time1}s;
-	  }
+			&--2 {
+				position: absolute;
+				top: 0;
+				right: calc(50% + 189px);
+				width: 5px;
+				background: $yellow;
 
-	  &--6 {
-		position: absolute;
-		top: calc(50% + 102px);
-		right: calc(50% + 180px);
-		height: 5px;
-		background: $yellow;
+				animation: yellow-row-2 #{$time1}s forwards #{$time1/2}s;
+			}
 
-		animation: yellow-row-6 #{$time1}s forwards #{3.5*$time1}s;
-	  }
+			&--3 {
+				position: absolute;
+				top: calc(50% + 16px);
+				right: calc(50% - 195px);
+				width: 5px;
+				background: $yellow;
 
-	  &--7 {
-		position: absolute;
-		top: calc(50% + 80px);
-		right: calc(50% - 182px);
-		height: 5px;
-		width: 0;
-		background: $yellow;
+				animation: yellow-row-3 #{$time1}s forwards #{2*$time1}s;
+			}
 
-		animation: yellow-row-7 #{$time1}s forwards #{5*$time1}s;
-	  }
+			&--4 {
+				position: absolute;
+				top: calc(50% + 41px);
+				right: calc(50% - 194px);
+				height: 5px;
+				background: $yellow;
 
-	  &--8 {
-		position: absolute;
-		top: calc(50% + 80px);
-		right: 0;
-		height: 0;
-		width: 5px;
-		background: $yellow;
+				animation: yellow-row-4 #{$time1}s forwards #{2.5*$time1}s;
+			}
 
-		animation: yellow-row-8 #{$time1}s forwards #{5.5*$time1}s;
-	  }
+			&--5 {
+				position: absolute;
+				top: calc(50% + 41px);
+				right: calc(50% + 223px);
+				width: 5px;
+				background: $yellow;
+
+				animation: yellow-row-5 #{$time1}s forwards #{3*$time1}s;
+			}
+
+			&--6 {
+				position: absolute;
+				top: calc(50% + 102px);
+				right: calc(50% + 180px);
+				height: 5px;
+				background: $yellow;
+
+				animation: yellow-row-6 #{$time1}s forwards #{3.5*$time1}s;
+			}
+
+			&--7 {
+				position: absolute;
+				top: calc(50% + 80px);
+				right: calc(50% - 182px);
+				height: 5px;
+				width: 0;
+				background: $yellow;
+
+				animation: yellow-row-7 #{$time1}s forwards #{5*$time1}s;
+			}
+
+			&--8 {
+				position: absolute;
+				top: calc(50% + 80px);
+				right: 0;
+				height: 0;
+				width: 5px;
+				background: $yellow;
+
+				animation: yellow-row-8 #{$time1}s forwards #{5.5*$time1}s;
+			}
+		}
 	}
-  }
 
-  &--2 {
-	background: $grey;
-	top: 100vh;
-	transition: #{$time1}s top;
-	padding-top: 60px;
-	box-sizing: border-box;
+	&--2 {
+		background: $grey;
+		top: 100vh;
+		transition: #{$time1}s top;
+		padding-top: 60px;
+		box-sizing: border-box;
 
-	&.x-active {
-	  top: 0;
+		&.x-active {
+			top: 0;
+
+			.sb-yellow-row {
+				&--1 {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					height: 0;
+					width: 5px;
+					background: $yellow;
+
+					animation: yellow-row-9 #{$time1}s forwards #{.5*$time1}s;
+				}
+
+				&--2 {
+					position: absolute;
+					top: 135px;
+					left: 50%;
+					height: 5px;
+					width: 0;
+					background: $yellow;
+
+					animation: yellow-row-10 #{$time1}s forwards #{$time1}s;
+				}
+			}
+
+			.sb-card--lingue {
+				animation: card-lingue #{$time1}s forwards #{1.5*$time1}s;
+			}
+		}
 	}
-  }
 }
 
 .sb-footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  height: 60px;
-  width: 0;
-  background: $yellow;
-  box-sizing: border-box;
-  overflow: hidden;
-  transition: #{$time1}s bottom;
-  z-index: 1;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 60px;
+	width: 0;
+	background: $yellow;
+	box-sizing: border-box;
+	overflow: hidden;
+	transition: #{$time1}s bottom;
+	z-index: 1;
 
-  animation: yellow-footer #{$time1}s forwards #{6*$time1}s;
+	animation: yellow-footer #{$time1}s forwards #{6*$time1}s;
 
-  &__image {
-	height: 50px;
-	width: 50px;
-	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .4);
-	border-radius: 100%;
-	left: -50px;
-	position: absolute;
-	top: 5px;
+	&__image {
+		height: 50px;
+		width: 50px;
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .4);
+		border-radius: 100%;
+		left: -50px;
+		position: absolute;
+		top: 5px;
 
-	animation: image-footer #{$time1}s forwards #{7*$time1}s;
-  }
-
-  &__info {
-	position: absolute;
-	top: 10px;
-	left: 60px;
-
-	p {
-	  color: $grey;
-	  font-size: 14px;
-	  font-family: 'Roboto', sans-serif;
-	  line-height: 20px;
-	  opacity: 0;
-
-	  animation: info-footer #{$time1}s forwards #{7*$time1}s;
+		animation: image-footer #{$time1}s forwards #{7*$time1}s;
 	}
-  }
 
-  &__codepen {
-	width: 30px;
-	position: absolute;
-	top: 15px;
-	right: -30px;
+	&__info {
+		position: absolute;
+		top: 10px;
+		left: 60px;
 
-	animation: codepen-footer #{$time1/2}s forwards #{7*$time1}s;
-  }
+		p {
+			color: $grey;
+			font-size: 14px;
+			font-family: 'Roboto', sans-serif;
+			line-height: 20px;
+			opacity: 0;
 
-  &__linkedin {
-	width: 30px;
-	position: absolute;
-	top: 15px;
-	right: -30px;
+			animation: info-footer #{$time1}s forwards #{7*$time1}s;
+		}
+	}
 
-	animation: linkedin-footer #{$time1/2}s forwards #{7.2*$time1}s;
-  }
+	&__codepen {
+		width: 30px;
+		position: absolute;
+		top: 15px;
+		right: -30px;
 
-  &.x-fixed {
-	bottom: calc(100% - 60px);
-  }
+		animation: codepen-footer #{$time1/2}s forwards #{7*$time1}s;
+	}
+
+	&__linkedin {
+		width: 30px;
+		position: absolute;
+		top: 15px;
+		right: -30px;
+
+		animation: linkedin-footer #{$time1/2}s forwards #{7.2*$time1}s;
+	}
+
+	&.x-fixed {
+		bottom: calc(100% - 60px);
+	}
 }
 
-.sb-card {
-  background: white;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+.sb-card--competenze {
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 35%;
+}
+
+.sb-card--lingue {
+	position: absolute;
+	top: 40px;
+	left: 65%;
+	width: 0;
+	overflow: hidden;
+	padding: 0;
+
+	table {
+		border-spacing: 10px;
+		width: 100%;
+	}
+
+	td {
+		vertical-align: middle;
+		padding: 10px;
+		width: 100%;
+
+		&:first-child {
+			width: 80px;
+		}
+	}
 }

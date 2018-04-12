@@ -1,0 +1,26 @@
+@import "../color";
+
+.sb-rating {
+	&__desc {
+		font-size: 16px;
+		color: $grey;
+	}
+
+	&__bar {
+		height: 6px;
+    border-radius: 0 4px 4px 0;
+		background: $grey;
+
+		&--it {
+			width: 100%;
+		}
+
+		&--en {
+			width: 60%;
+		}
+
+		&--fr {
+			width: 5%;
+		}
+	}
+}
